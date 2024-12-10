@@ -9,9 +9,9 @@ export const fetchMemberDetails = (id) => {
         lastName: "User",
         bio: "This is a mock bio.",
         joinDate: "2022-01-01",
-        profilePictureUrl: "https://via.placeholder.com/150",
+        profilePictureUrl: "/src/assets/avatar.jpg",
       });
-    }, 500); // Simulate network delay
+    }, 500);
   });
 };
   

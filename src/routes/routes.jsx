@@ -5,6 +5,7 @@ import LandingPage from "../pages/LandingPage";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
 import DashboardPage from "../pages/DashboardPage";
+import ProfilePage from "../pages/ProfilePage"; 
 import ProtectedRoute from "../components/ProtectedRoute";
 import UnauthorizedPage from "../pages/UnauthorizedPage";
 
@@ -18,6 +19,7 @@ function AppRoutes() {
           <Route path="register" element={<RegistrationPage />} />
           <Route path="member/:id/*" element={<ProtectedRoute />}>
             <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="profile" element={<ProfilePage />} />
           </Route>
           <Route path="unauthorized" element={<UnauthorizedPage />} />
         </Route>

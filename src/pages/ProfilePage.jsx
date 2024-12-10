@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchMemberDetails } from "../services/memberService";
 import { AuthContext } from "../context/AuthContext";
+import "./profile.css";
 
 const DashboardPage = () => {
     const { id } = useParams();
@@ -36,18 +37,21 @@ const DashboardPage = () => {
 
     return (
         <div>
-      <h2>Member Overview</h2>
-      <div className="row g-3">
-        <div className="col-12">
-            <ul>
-            <li>Small tiles summerizing each domains status</li>
-            <li>Small tiles summerizing member related stats (visits, totla entries, etc)</li>
-            <li>Ai suggestion tile</li>
-            <li>Main chart plotting weight, or goals</li>
-            </ul>
+            <h1>
+                Profile for {memberDetails.firstName} {memberDetails.lastName}
+            </h1>
+            <h3>Member ID: {id}</h3>
+            <p>{memberDetails.bio}</p>
+            <p>Joined on: {memberDetails.joinDate}</p>
+            <div className="avatar-container">
+                <img
+                    src={memberDetails.profilePictureUrl}
+                    className="avatar"
+                    alt="Profile"
+                    style={{ borderRadius: "50%" }}
+                />
+            </div>
         </div>
-      </div>
-    </div>
     );
 };
 
